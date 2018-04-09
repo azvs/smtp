@@ -71,4 +71,5 @@ func (this *Smtp) SendMail(from, tos, subject, body string, contentType ...strin
 
 	auth := smtp.PlainAuth("", this.Username, this.Password, hp[0])
 	return smtp.SendMail(this.Address, auth, from, strings.Split(tos, ";"), []byte(message))
+	
 }
